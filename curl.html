@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="/tracker/tracker.css" />
+<link rel="stylesheet" type="text/css" href="/langflags/langflags.css" />
+<script type="text/javascript">
+<!--
+function adjustParent() {
+	if (!parent) return;
+	var list = parent.document.getElementsByTagName('iframe');
+	for (var i=0; i<list.length; i++) {
+		if (list[i].contentWindow.document == document) {
+			var b = document.getElementsByTagName('body')[0];
+			list[i].style.border="0px";
+			list[i].style.width="100%";
+			list[i].style.height=b.scrollHeight+20+"px";
+			//list[i].style.width=b.scrollWidth+20+"px";
+			list[i].setAttribute('scrolling',"no");
+			break;
+		}
+	}
+}
+-->
+</script>
+</head>
+<body bgcolor="#EEF2F4" onload="adjustParent();">
+<script type="text/javascript">
+function collapse (id) {
+	var pattern = "-"+id+"$";
+	var list = document.getElementsByTagName("tr");
+	for (i=0; i < list.length; i++) {
+		if (!list[i].getAttribute("lang") || !list[i].getAttribute("lang").match(pattern)) continue;
+		if (list[i].style.display == "none") { 
+			try { 
+				list[i].style.display="table-row"; 
+			} 
+			catch(e) {
+				list[i].style.display="block"; 
+			} 
+		}
+		else list[i].style.display = "none";
+	}
+	var lister = document.getElementById("RLS"+id);
+	if (lister.firstChild.nodeValue == "+") {
+		lister.firstChild.nodeValue = "\u2013";
+	}
+	else {
+		lister.firstChild.nodeValue = "+";
+	}
+}
+function collapseall () {
+	var lister = document.getElementById("collapseall");
+	if (lister.firstChild.nodeValue == "+") {
+		var list = document.getElementsByTagName("tr");
+		
+		for (i=0; i < list.length; i++) {
+			if (list[i].getAttribute("lang") && list[i].getAttribute("lang").match(/collapse/)) {
+                                      try {
+                                                list[i].style.display="table-row";
+                                        }
+                                        catch(e) {
+                                                list[i].style.display="block";
+                                        }
+                                }
+		}
+		list = document.getElementsByTagName("b");
+		for (i=0; i < list.length; i++) {
+			if (!list[i].getAttribute("lang") || list[i].getAttribute("lang") != "collapser") continue;
+			list[i].firstChild.nodeValue = "\u2013";
+		}
+		lister.firstChild.nodeValue = "\u2013";
+	}
+	else {
+		list = document.getElementsByTagName("tr");
+		for (i=0; i < list.length; i++) {
+			if (list[i].getAttribute("lang") && list[i].getAttribute("lang").match(/collapse/)) list[i].style.display = "none";
+		}
+		list = document.getElementsByTagName("b");
+		for (i=0; i < list.length; i++) {
+			if (!list[i].getAttribute("lang") || list[i].getAttribute("lang") != "collapser") continue;
+			list[i].firstChild.nodeValue = "+";
+		}
+
+		lister.firstChild.nodeValue = "+";
+	}
+	
+}
+var visiblecredits;
+function showcredits(node) {
+	var list=node.parentNode.childNodes;
+	var passed = false;
+	for (var i=0; i<list.length; i++) {
+		if (list[i] == node) {
+			passed = true;
+		}
+		else if (passed && list[i].tagName == "SPAN") {
+			if (visiblecredits && visiblecredits == list[i]) {
+				return;
+			}
+			else if (visiblecredits) {
+				//visiblecredits.style.display="none";
+			}
+			list[i].style.display="inline";
+			visiblecredits=list[i];
+			return;
+		}
+	}
+
+}
+</script>
+<table id="torrentlist" cellpadding=3 cellspacing=0><tr style="font-weight:bold;"><td><a href="javascript:collapseall()" style="text-decoration:none;"><b ID="collapseall" style="font-size:larger;font-weight:bolder;">+</b> </a> <a class="wikilink" target="_blank" href="http://docuwiki.net/index.php?title=Fox_Wars"><img src="/style_emoticons/default/docuwiki.png" alt="[Wikilink]" title="[Wikilink]" class="icon"/></a> &nbsp;&nbsp;<a href="/index.php?showtopic=3380" target="_blank" class="adoptlink"><img src="/badges/adopt.png" alt="[Adopt this Release]" title="[Adopt this Release]"></a></td><td><a href='/maintrackfunctemp.php?orderby=seeders&amp;order=DESC&amp;' style='text-decoration:underline;'>Seeds</a></td><td><a href='/maintrackfunctemp.php?orderby=leechers&amp;order=DESC&amp;' style='text-decoration:underline;'>Peers</a></td></tr>
+<tr style="background-color:#EEF2F4;"><td class="singleindent"><a class="torrentlink" href="./torrents/BBC.Fox.Wars.720p.HDTV.x264.AAC.MVGroup.org.mkv.torrent"><img src="/style_emoticons/default/btsmall.gif" alt="[Torrent]" title="[Torrent]" class="icon" /></a> <a class="magnetlink" href="magnet:?xt=urn:btih:deed373f5d1da330f5978841c342983194a20a88&dn=BBC.Fox.Wars.720p.HDTV.x264.AAC.MVGroup.org.mkv&tr=http%3a//www.mvgroup.org%3a2710/announce"><img src="/style_emoticons/default/magnet.png" alt="[magnet]" title="[magnet]" class="icon"/></a> <a class="ed2klink" href="ed2k://|file|BBC.Fox.Wars.720p.HDTV.x264.AAC.MVGroup.org.mkv|1196418914|85c8b53c2b0810d60f4f7f5df309adc2|/"><img src="/style_emoticons/default/muleicon.gif" alt="[ed2k]" title="[ed2k]" class="icon"/></a> BBC Fox Wars HDTV  &ndash; <i>Subtitles</i>: <a title="English &ndash; Downloads: 146" href="/releasedb/getSubtitle.php?name=BBC.Fox.Wars.720p.HDTV.x264.AAC.MVGroup.org.eng.srt" onmouseover="showcredits(this);"><span class="flag en">&nbsp;</span></a><span class="_credits">by <a href="/index.php?showuser=60410" target="_blank"><i>JungleBoy</i></a></span></td><td style="text-align:right;">4</td><td style="text-align:right;">0</td></tr></table><script type="text/javascript"><!-- 
+
+		list = document.getElementsByName("backarrow");
+		for (i=0; i < list.length; i++) {
+			if (0 > 0) 
+				list[i].style.display="inline";
+			else { 
+				list[i].style.color = "gray";
+				list[i].href = "#";
+				list[i].style.display="none";
+			}
+		}
+	
+		list = document.getElementsByName("fwdarrow");
+		for (i=0; i < list.length; i++) {
+			if (1 > 50)  
+				list[i].style.display="inline";
+			else {
+				list[i].style.color = "gray";
+				list[i].href = "#";
+				list[i].style.display="none";
+			}
+		}
+			pattern = "0";
+			list = document.getElementsByName(pattern);
+			for (i=0; i < list.length; i++) {
+				if (list[i].style.display == "none") {
+                                        try {
+                                                list[i].style.display="table-row";
+                                        }
+                                        catch(e) {
+                                                list[i].style.display="block";
+                                        }
+                                }
+				else list[i].style.display = "none";
+			}
+			lister = document.getElementById(pattern);
+			if (lister.firstChild.nodeValue == "+") {
+				lister.firstChild.nodeValue = "\u2013";
+			}
+			else {
+				lister.firstChild.nodeValue = "+";
+			}
+--></script>		<form action="/maintrackfunctemp.php?releaseurl=52608" method="post">
+		    <input type="image" src="/badges/thanks.png" name="thanks" alt="[Thanks!]" title="Say thanks for this release."/>
+		    <input type="hidden" name="thanks" value="52608">
+		</form>
+		<b>150 users thanked for this release:</b> <a href="/index.php?showuser=169243" target="_top" >MagAA</a>, <a href="/index.php?showuser=366311" target="_top" >karmax264</a>, <a href="/index.php?showuser=159120" target="_top" >dr00py</a>, <a href="/index.php?showuser=299724" target="_top" >Breytie</a>, <a href="/index.php?showuser=342401" target="_top" >kiptucker</a>, <a href="/index.php?showuser=257017" target="_top" >wouterspct</a>, <a href="/index.php?showuser=222136" target="_top" >Jahilea</a>, <a href="/index.php?showuser=378011" target="_top" >zxz</a>, <a href="/index.php?showuser=250122" target="_top" >muncktray</a>, <a href="/index.php?showuser=359095" target="_top" >Zasca28</a>, <a href="/index.php?showuser=48447" target="_top" >yohaico</a>, <a href="/index.php?showuser=314914" target="_top" >ChezJack</a>, <a href="/index.php?showuser=364139" target="_top" >Northernli9hts</a>, <a href="/index.php?showuser=367791" target="_top" >williams</a>, <a href="/index.php?showuser=205825" target="_top" >ycyong</a>, <a href="/index.php?showuser=371126" target="_top" >JohnCoffey</a>, <a href="/index.php?showuser=351339" target="_top" >Polik88</a>, <a href="/index.php?showuser=159456" target="_top" >wbravetheheartw</a>, <a href="/index.php?showuser=115511" target="_top" >boris0815</a>, <a href="/index.php?showuser=273351" target="_top" >wilynightrider</a>, <a href="/index.php?showuser=349944" target="_top" >dad12</a>, <a href="/index.php?showuser=326292" target="_top" >rice</a>, <a href="/index.php?showuser=272950" target="_top" >stoneageking</a>, <a href="/index.php?showuser=179777" target="_top" >ismanino</a>, <a href="/index.php?showuser=326380" target="_top" >brnfyd</a>, <a href="/index.php?showuser=249162" target="_top" >oleaak</a>, <a href="/index.php?showuser=135207" target="_top" >ozoutback</a>, <a href="/index.php?showuser=229963" target="_top" >biglo</a>, <a href="/index.php?showuser=115592" target="_top" >alimostanadd</a>, <a href="/index.php?showuser=226930" target="_top" >chrysalis56</a>, <a href="/index.php?showuser=63690" target="_top" >slackmax</a>, <a href="/index.php?showuser=95266" target="_top" >l337Havoc</a>, <a href="/index.php?showuser=321086" target="_top" >Iceviking</a>, <a href="/index.php?showuser=356367" target="_top" >Redaolpu</a>, <a href="/index.php?showuser=228864" target="_top" >bohanka</a>, <a href="/index.php?showuser=334382" target="_top" >maddox</a>, <a href="/index.php?showuser=241225" target="_top" >froms27</a>, <a href="/index.php?showuser=361162" target="_top" >tdgq</a>, <a href="/index.php?showuser=114644" target="_top" >NSzeto</a>, <a href="/index.php?showuser=266443" target="_top" >cor90</a>, <a href="/index.php?showuser=279588" target="_top" >happycat</a>, <a href="/index.php?showuser=356630" target="_top" >liu5788</a>, <a href="/index.php?showuser=276027" target="_top" >arlenbower</a>, <a href="/index.php?showuser=158160" target="_top" >calaf1982</a>, <a href="/index.php?showuser=260692" target="_top" >saadnano</a>, <a href="/index.php?showuser=105227" target="_top" >wwtravlr</a>, <a href="/index.php?showuser=349879" target="_top" >b8nshee</a>, <a href="/index.php?showuser=361613" target="_top" >scadge</a>, <a href="/index.php?showuser=14653" target="_top" >BrianG</a>, <a href="/index.php?showuser=254078" target="_top" >ozmosis74</a>, <a href="/index.php?showuser=2309" target="_top" >dantana</a>, <a href="/index.php?showuser=257345" target="_top" >destrier</a>, <a href="/index.php?showuser=145300" target="_top" >PostmanPat</a>, <a href="/index.php?showuser=197012" target="_top" >cavalier20i</a>, <a href="/index.php?showuser=223966" target="_top" >priz24061</a>, <a href="/index.php?showuser=263263" target="_top" >troyski2</a>, <a href="/index.php?showuser=307808" target="_top" >Ventra66</a>, <a href="/index.php?showuser=231323" target="_top" >krock1951</a>, <a href="/index.php?showuser=360173" target="_top" >manwhatadork</a>, <a href="/index.php?showuser=112156" target="_top" >science2art</a>, <a href="/index.php?showuser=59477" target="_top" >Kwyjib0</a>, <a href="/index.php?showuser=319786" target="_top" >Rhivre</a>, <a href="/index.php?showuser=337753" target="_top" >headz01</a>, <a href="/index.php?showuser=226395" target="_top" >soongwoo</a>, <a href="/index.php?showuser=68594" target="_top" >Pogaru</a>, <a href="/index.php?showuser=290839" target="_top" >jen4free</a>, <a href="/index.php?showuser=293394" target="_top" >h9h4z7</a>, <a href="/index.php?showuser=374993" target="_top" >bert83</a>, <a href="/index.php?showuser=25542" target="_top" >wagoneer</a>, <a href="/index.php?showuser=371038" target="_top" >sandynic</a>, <a href="/index.php?showuser=99240" target="_top" >greengum</a>, <a href="/index.php?showuser=339238" target="_top" >semioticista</a>, <a href="/index.php?showuser=289237" target="_top" >Cyborg666</a>, <a href="/index.php?showuser=108076" target="_top" >Trouble101</a>, <a href="/index.php?showuser=319192" target="_top" >icezerone</a>, <a href="/index.php?showuser=207426" target="_top" >ingiss</a>, <a href="/index.php?showuser=129576" target="_top" >bluedragon747</a>, <a href="/index.php?showuser=205135" target="_top" >milw50717</a>, <a href="/index.php?showuser=121396" target="_top" >bajabiz</a>, <a href="/index.php?showuser=219134" target="_top" >TheRyche</a>, <a href="/index.php?showuser=385566" target="_top" >lorewill</a>, <a href="/index.php?showuser=276245" target="_top" >rodier490</a>, <a href="/index.php?showuser=383550" target="_top" >skattie</a>, <a href="/index.php?showuser=109" target="_top" >festering leper</a>, <a href="/index.php?showuser=327949" target="_top" >descente69</a>, <a href="/index.php?showuser=50716" target="_top" >rask</a>, <a href="/index.php?showuser=275344" target="_top" >9900le</a>, <a href="/index.php?showuser=201027" target="_top" >dgredelj</a>, <a href="/index.php?showuser=175201" target="_top" >zmeleron</a>, <a href="/index.php?showuser=185631" target="_top" >dethace</a>, <a href="/index.php?showuser=56611" target="_top" >kona</a>, <a href="/index.php?showuser=385925" target="_top" >trasgu</a>, <a href="/index.php?showuser=262156" target="_top" >gregster</a>, <a href="/index.php?showuser=153801" target="_top" >Gerard1234</a>, <a href="/index.php?showuser=179754" target="_top" >rewsty</a>, <a href="/index.php?showuser=275746" target="_top" >bongjuan</a>, <a href="/index.php?showuser=360253" target="_top" >torbilis</a>, <a href="/index.php?showuser=309810" target="_top" >stuart2000</a>, <a href="/index.php?showuser=380596" target="_top" >winmmic</a>, <a href="/index.php?showuser=216757" target="_top" >beaverdam</a>, <a href="/index.php?showuser=41613" target="_top" >hughwang</a>, <a href="/index.php?showuser=264157" target="_top" >mbah234</a>, <a href="/index.php?showuser=221416" target="_top" >ikik</a>, <a href="/index.php?showuser=88784" target="_top" >Baloney</a>, <a href="/index.php?showuser=214286" target="_top" >spikespiegel</a>, <a href="/index.php?showuser=262893" target="_top" >seafury11</a>, <a href="/index.php?showuser=308200" target="_top" >stelladrinker</a>, <a href="/index.php?showuser=89725" target="_top" >joca620</a>, <a href="/index.php?showuser=214947" target="_top" >macronul</a>, <a href="/index.php?showuser=253808" target="_top" >ItalianJob</a>, <a href="/index.php?showuser=270565" target="_top" >jagadeesan</a>, <a href="/index.php?showuser=17655" target="_top" >khasbulatov</a>, <a href="/index.php?showuser=139862" target="_top" >yellowdog9</a>, <a href="/index.php?showuser=269063" target="_top" >fleming16</a>, <a href="/index.php?showuser=269308" target="_top" >dpcdavid</a>, <a href="/index.php?showuser=121995" target="_top" >lechat3</a>, <a href="/index.php?showuser=225482" target="_top" >Tieto</a>, <a href="/index.php?showuser=91318" target="_top" >seventytwo</a>, <a href="/index.php?showuser=316973" target="_top" >t0n3s</a>, <a href="/index.php?showuser=298985" target="_top" >whillian</a>, <a href="/index.php?showuser=74742" target="_top" >ahamid123</a>, <a href="/index.php?showuser=319270" target="_top" >Jgalt88</a>, <a href="/index.php?showuser=27176" target="_top" >jrenv</a>, <a href="/index.php?showuser=221570" target="_top" >mvgroup2009</a>, <a href="/index.php?showuser=279540" target="_top" >seanhu60195</a>, <a href="/index.php?showuser=176348" target="_top" >gaspah</a>, <a href="/index.php?showuser=106347" target="_top" >psma</a>, <a href="/index.php?showuser=237359" target="_top" >moovy</a>, <a href="/index.php?showuser=310025" target="_top" >peterpan74</a>, <a href="/index.php?showuser=326784" target="_top" >edchin99</a>, <a href="/index.php?showuser=189116" target="_top" >cyp450</a>, <a href="/index.php?showuser=242484" target="_top" >frantescu</a>, <a href="/index.php?showuser=275841" target="_top" >WittyGoblin</a>, <a href="/index.php?showuser=339184" target="_top" >VMorgu</a>, <a href="/index.php?showuser=257412" target="_top" >Rrent</a>, <a href="/index.php?showuser=56359" target="_top" >deonisos</a>, <a href="/index.php?showuser=306334" target="_top" >yvsgk79</a>, <a href="/index.php?showuser=289451" target="_top" >brownwolfdxb</a>, <a href="/index.php?showuser=154616" target="_top" >Abddevil</a>, <a href="/index.php?showuser=334994" target="_top" >dafraka</a>, <a href="/index.php?showuser=149396" target="_top" >alamanda</a>, <a href="/index.php?showuser=17017" target="_top" >lomotil</a>, <a href="/index.php?showuser=171598" target="_top" >alexrus2</a>, <a href="/index.php?showuser=186257" target="_top" >typo</a>, <a href="/index.php?showuser=331687" target="_top" >punya</a>, <a href="/index.php?showuser=312673" target="_top" >taftbg</a>, <a href="/index.php?showuser=133778" target="_top" >emadfofoo</a>, <a href="/index.php?showuser=264490" target="_top" >jvetton</a>, <a href="/index.php?showuser=367458" target="_top" >VitDoc</a>, <a href="/index.php?showuser=355047" target="_top" >Suikoden415</a></body></html>
